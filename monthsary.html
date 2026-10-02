@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Monthsary ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Falling hearts -->
+    <div class="hearts"></div>
+
+    <main>
+
+        <h1>Happy Monthsary ❤️</h1>
+
+        <p class="subtitle">
+            Another month with you 💕
+        </p>
+
+        <!-- Photo Gallery -->
+        <div class="gallery">
+
+            <div class="photo-card">
+                <img src="images/photo1.jpg">
+            </div>
+
+            <div class="photo-card">
+                <img src="images/photo2.jpg">
+            </div>
+
+            <div class="photo-card active">
+                <img src="images/photo3.jpg">
+
+                <p>Tap the photo ❤️</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="images/photo4.jpg">
+            </div>
+
+            <div class="photo-card">
+                <img src="images/photo5.jpg">
+            </div>
+
+        </div>
+
+        <!-- Photo Navigation -->
+        <div class="controls">
+
+            <button onclick="previousPhoto()">❮</button>
+
+            <span id="counter">3 / 10</span>
+
+            <button onclick="nextPhoto()">❯</button>
+
+        </div>
+
+        <!-- Monthsary Message -->
+        <div class="message">
+
+            <h2>Happy Monthsary, My Love! 💗</h2>
+
+            <p>
+                Another month has passed, and I'm still grateful
+                that I get to spend this journey with you.
+            </p>
+
+            <p>
+                Thank you for the memories, the smiles, the laughs,
+                and every little moment we've shared together. ❤️
+            </p>
+
+            <button onclick="showMessage()">
+                Open My Message 💌
+            </button>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
