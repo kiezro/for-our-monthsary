@@ -1,3 +1,7 @@
+// ===============================
+// MONTHSARY MESSAGE
+// ===============================
+
 function showMessage() {
 
     alert(
@@ -12,12 +16,23 @@ function showMessage() {
 
 
 // ===============================
+// PHOTO SETTINGS
+// ===============================
+
+// Photo 3 starts in the center
+let currentPhoto = 2;
+
+// Get all photo cards
+const photos = document.querySelectorAll(".photo-card");
+
+
+// ===============================
 // PHOTO FLIP
 // ===============================
 
 function flipCard(card) {
 
-    // Only the photo in the center can flip
+    // Only the center photo can flip
     if (card.classList.contains("active")) {
 
         card.classList.toggle("flipped");
@@ -28,36 +43,102 @@ function flipCard(card) {
 
 
 // ===============================
-// PHOTO NAVIGATION
+// UPDATE PHOTO POSITIONS
 // ===============================
-
-let currentPhoto = 2;
-
-const photos = document.querySelectorAll(".photo-card");
-
 
 function updateCenterPhoto() {
 
     photos.forEach((photo, index) => {
 
-        // Make the current photo active
-        if (index === currentPhoto) {
+        // Remove old position classes
+        photo.classList.remove(
+            "active",
+            "left",
+            "left-far",
+            "right",
+            "right-far",
+            "flipped"
+        );
 
-            photo.classList.add("active");
 
-        } else {
+        // Calculate position
+        let position = index - currentPhoto;
 
-            photo.classList.remove("active");
+
+        // Make the photos loop around
+        if (position > 2) {
+
+            position -= photos.length;
 
         }
 
-        // Reset flip
-        photo.classList.remove("flipped");
+
+        if (position < -2) {
+
+            position += photos.length;
+
+        }
+
+
+        // =========================
+        // CENTER
+        // =========================
+
+        if (position === 0) {
+
+            photo.classList.add("active");
+
+        }
+
+
+        // =========================
+        // LEFT
+        // =========================
+
+        else if (position === -1) {
+
+            photo.classList.add("left");
+
+        }
+
+
+        // =========================
+        // FAR LEFT
+        // =========================
+
+        else if (position === -2) {
+
+            photo.classList.add("left-far");
+
+        }
+
+
+        // =========================
+        // RIGHT
+        // =========================
+
+        else if (position === 1) {
+
+            photo.classList.add("right");
+
+        }
+
+
+        // =========================
+        // FAR RIGHT
+        // =========================
+
+        else if (position === 2) {
+
+            photo.classList.add("right-far");
+
+        }
 
     });
 
 
-    // Update counter
+    // Update photo counter
+
     document.getElementById("counter").textContent =
         (currentPhoto + 1) + " / " + photos.length;
 
@@ -71,6 +152,9 @@ function updateCenterPhoto() {
 function nextPhoto() {
 
     currentPhoto++;
+
+    // Go back to Photo 1
+    // after Photo 5
 
     if (currentPhoto >= photos.length) {
 
@@ -91,6 +175,9 @@ function previousPhoto() {
 
     currentPhoto--;
 
+    // Go to Photo 5
+    // when going before Photo 1
+
     if (currentPhoto < 0) {
 
         currentPhoto = photos.length - 1;
@@ -102,5 +189,8 @@ function previousPhoto() {
 }
 
 
-// Set Photo 3 as the starting center photo
+// ===============================
+// START GALLERY
+// ===============================
+
 updateCenterPhoto();
