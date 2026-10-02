@@ -22,58 +22,252 @@
             Another month with you 💕
         </p>
 
-        <!-- Photo Gallery -->
+
+        <!-- =========================
+             PHOTO GALLERY
+        ========================== -->
+
         <div class="gallery">
 
-            <div class="photo-card">
-                <img src="photo1.jpeg">
+
+            <!-- PHOTO 1 -->
+            <div class="photo-card" onclick="flipCard(this)">
+
+                <div class="photo-inner">
+
+                    <!-- Front -->
+                    <div class="photo-front">
+
+                        <img src="photo1.jpeg">
+
+                    </div>
+
+
+                    <!-- Back -->
+                    <div class="photo-back">
+
+                        <h2>❤️</h2>
+
+                        <p>
+                            Every moment with you
+                            is something I treasure.
+                        </p>
+
+                        <small>
+                            Tap again to return
+                        </small>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="photo-card">
-                <img src="photo2.jpeg">
+
+
+            <!-- PHOTO 2 -->
+            <div class="photo-card" onclick="flipCard(this)">
+
+                <div class="photo-inner">
+
+                    <!-- Front -->
+                    <div class="photo-front">
+
+                        <img src="photo2.jpeg">
+
+                    </div>
+
+
+                    <!-- Back -->
+                    <div class="photo-back">
+
+                        <h2>💕</h2>
+
+                        <p>
+                            Thank you for all the
+                            beautiful memories.
+                        </p>
+
+                        <small>
+                            Tap again to return
+                        </small>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="photo-card active">
-                <img src="photo3.jpeg">
 
-                <p>Tap the photo ❤️</p>
+
+            <!-- PHOTO 3 - STARTING CENTER PHOTO -->
+            <div class="photo-card active"
+                 onclick="flipCard(this)">
+
+                <div class="photo-inner">
+
+                    <!-- Front -->
+                    <div class="photo-front">
+
+                        <img src="photo3.jpeg">
+
+                        <p>
+                            Tap the photo ❤️
+                        </p>
+
+                    </div>
+
+
+                    <!-- Back -->
+                    <div class="photo-back">
+
+                        <h2>
+                            For You ❤️
+                        </h2>
+
+                        <p>
+                            Happy Monthsary, my love. 💗
+                        </p>
+
+                        <p>
+                            Thank you for every moment,
+                            every smile, and every memory
+                            we've shared together.
+                        </p>
+
+                        <p>
+                            I hope we continue making
+                            beautiful memories together.
+                        </p>
+
+                        <small>
+                            Tap again to return
+                        </small>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="photo-card">
-                <img src="photo4.jpeg">
+
+
+            <!-- PHOTO 4 -->
+            <div class="photo-card" onclick="flipCard(this)">
+
+                <div class="photo-inner">
+
+                    <!-- Front -->
+                    <div class="photo-front">
+
+                        <img src="photo4.jpeg">
+
+                    </div>
+
+
+                    <!-- Back -->
+                    <div class="photo-back">
+
+                        <h2>💗</h2>
+
+                        <p>
+                            You make ordinary moments
+                            feel special.
+                        </p>
+
+                        <small>
+                            Tap again to return
+                        </small>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="photo-card">
-                <img src="photo5.jpeg">
+
+
+            <!-- PHOTO 5 -->
+            <div class="photo-card" onclick="flipCard(this)">
+
+                <div class="photo-inner">
+
+                    <!-- Front -->
+                    <div class="photo-front">
+
+                        <img src="photo5.jpeg">
+
+                    </div>
+
+
+                    <!-- Back -->
+                    <div class="photo-back">
+
+                        <h2>💖</h2>
+
+                        <p>
+                            Here's to more months,
+                            more memories, and more love.
+                        </p>
+
+                        <small>
+                            Tap again to return
+                        </small>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
 
-        <!-- Photo Navigation -->
+
+
+        <!-- =========================
+             PHOTO NAVIGATION
+        ========================== -->
+
         <div class="controls">
 
-            <button onclick="previousPhoto()">❮</button>
+            <button onclick="previousPhoto()">
+                ❮
+            </button>
 
-            <span id="counter">1 / 5</span>
+            <span id="counter">
+                3 / 5
+            </span>
 
-            <button onclick="nextPhoto()">❯</button>
+            <button onclick="nextPhoto()">
+                ❯
+            </button>
 
         </div>
 
-        <!-- Monthsary Message -->
+
+
+        <!-- =========================
+             MONTHSARY MESSAGE
+        ========================== -->
+
         <div class="message">
 
-            <h2>Happy Monthsary, My Love! 💗</h2>
+            <h2>
+                Happy Monthsary, My Love! 💗
+            </h2>
+
 
             <p>
                 Another month has passed, and I'm still grateful
                 that I get to spend this journey with you.
             </p>
 
+
             <p>
                 Thank you for the memories, the smiles, the laughs,
                 and every little moment we've shared together. ❤️
             </p>
+
 
             <button onclick="showMessage()">
                 Open My Message 💌
@@ -83,7 +277,241 @@
 
     </main>
 
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
 </html>
+
+Your complete "script.js"
+
+Replace your current JavaScript with this:
+
+function showMessage() {
+
+    alert(
+        "Happy Monthsary, My Love! ❤️\n\n" +
+        "Thank you for another beautiful month together. " +
+        "I may not always say it perfectly, but I truly appreciate " +
+        "every moment we share.\n\n" +
+        "Here's to more memories, more laughs, and more months together. 💗"
+    );
+
+}
+
+
+// ===============================
+// PHOTO FLIP
+// ===============================
+
+function flipCard(card) {
+
+    // Only the photo in the center can flip
+    if (card.classList.contains("active")) {
+
+        card.classList.toggle("flipped");
+
+    }
+
+}
+
+
+// ===============================
+// PHOTO NAVIGATION
+// ===============================
+
+let currentPhoto = 2;
+
+const photos = document.querySelectorAll(".photo-card");
+
+
+function updateCenterPhoto() {
+
+    photos.forEach((photo, index) => {
+
+        // Make the current photo active
+        if (index === currentPhoto) {
+
+            photo.classList.add("active");
+
+        } else {
+
+            photo.classList.remove("active");
+
+        }
+
+        // Reset flip
+        photo.classList.remove("flipped");
+
+    });
+
+
+    // Update counter
+    document.getElementById("counter").textContent =
+        (currentPhoto + 1) + " / " + photos.length;
+
+}
+
+
+// ===============================
+// NEXT PHOTO
+// ===============================
+
+function nextPhoto() {
+
+    currentPhoto++;
+
+    if (currentPhoto >= photos.length) {
+
+        currentPhoto = 0;
+
+    }
+
+    updateCenterPhoto();
+
+}
+
+
+// ===============================
+// PREVIOUS PHOTO
+// ===============================
+
+function previousPhoto() {
+
+    currentPhoto--;
+
+    if (currentPhoto < 0) {
+
+        currentPhoto = photos.length - 1;
+
+    }
+
+    updateCenterPhoto();
+
+}
+
+
+// Set Photo 3 as the starting center photo
+updateCenterPhoto();
+
+And add this to your existing "style.css"
+
+/* =================================
+   FLIP PHOTO
+================================= */
+
+.photo-card {
+    perspective: 1000px;
+}
+
+.photo-inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.8s ease;
+
+    transform-style: preserve-3d;
+}
+
+
+/* Flip */
+
+.photo-card.flipped .photo-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* Front and Back */
+
+.photo-front,
+.photo-back {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    border-radius: inherit;
+
+    overflow: hidden;
+
+}
+
+
+/* Front */
+
+.photo-front {
+    transform: rotateY(0deg);
+}
+
+
+/* Back */
+
+.photo-back {
+
+    transform: rotateY(180deg);
+
+    background: #ff6b81;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+}
+
+
+.photo-back h2 {
+    margin-bottom: 15px;
+}
+
+
+.photo-back p {
+
+    line-height: 1.6;
+
+}
+
+
+.photo-back small {
+
+    margin-top: 15px;
+
+    opacity: 0.8;
+
+}
+
+❤️ How it works now
+
+When the page opens:
+
+Photo 3 is in the center → tap it → flips.
+
+Then:
+
+❯ → Photo 4 becomes center → tap Photo 4 → flips.
+
+❯ → Photo 5 becomes center → tap Photo 5 → flips.
+
+And:
+
+❮ → previous photo becomes center → tap it → flips.
+
+The side photos cannot flip because only the photo with the "active" class is allowed to flip.
