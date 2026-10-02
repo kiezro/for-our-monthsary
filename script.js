@@ -8,3 +8,6 @@ function showMessage() {
         "Here's to more memories, more laughs, and more months together. 💗"
     );
 }
+function flipCard(card) {
+    card.classList.toggle("flipped");
+}
