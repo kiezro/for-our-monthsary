@@ -7,6 +7,7 @@ function showMessage() {
         "every moment we share.\n\n" +
         "Here's to more memories, more laughs, and more months together. 💗"
     );
+
 }
 
 
@@ -16,10 +17,13 @@ function showMessage() {
 
 function flipCard(card) {
 
-    // Only the center photo can flip
+    // Only the photo in the center can flip
     if (card.classList.contains("active")) {
+
         card.classList.toggle("flipped");
+
     }
+
 }
 
 
@@ -36,42 +40,67 @@ function updateCenterPhoto() {
 
     photos.forEach((photo, index) => {
 
-        // Make the current center photo active
-        photo.classList.toggle(
-            "active",
-            index === currentPhoto
-        );
+        // Make the current photo active
+        if (index === currentPhoto) {
 
-        // Close the flip when changing photo
+            photo.classList.add("active");
+
+        } else {
+
+            photo.classList.remove("active");
+
+        }
+
+        // Reset flip
         photo.classList.remove("flipped");
 
     });
 
+
     // Update counter
     document.getElementById("counter").textContent =
         (currentPhoto + 1) + " / " + photos.length;
+
 }
 
+
+// ===============================
+// NEXT PHOTO
+// ===============================
 
 function nextPhoto() {
 
     currentPhoto++;
 
     if (currentPhoto >= photos.length) {
+
         currentPhoto = 0;
+
     }
 
     updateCenterPhoto();
+
 }
 
+
+// ===============================
+// PREVIOUS PHOTO
+// ===============================
 
 function previousPhoto() {
 
     currentPhoto--;
 
     if (currentPhoto < 0) {
+
         currentPhoto = photos.length - 1;
+
     }
 
     updateCenterPhoto();
+
 }
+
+
+// Set Photo 3 as the starting center photo
+updateCenterPhoto();
